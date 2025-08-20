@@ -1,0 +1,2 @@
+/home/iti-es/AndroidStudioProjects/PersonClassifierApp/opencv/java/src/org/opencv/core/MatAt.kt
+/home/iti-es/AndroidStudioProjects/PersonClassifierApp/opencv/java/src/org/opencv/core/MatMatMul.kt

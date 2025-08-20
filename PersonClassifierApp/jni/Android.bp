@@ -1,0 +1,60 @@
+cc_library_shared {
+    name: "libperson_classifier_native",
+    
+    srcs: ["main.cpp"],
+    
+    shared_libs: [
+        "libopencv_java4",
+        "ndk_libc++_shared",
+        "liblog",
+        "libjnigraphics", 
+        "libmediandk",
+        "libcamera2ndk",  // Add Camera2 NDK support
+        "libz",
+    ],
+    
+    header_libs: [
+    	"jni_headers",
+        "libcamera2ndk_headers",  // Add camera headers	
+    ],
+    
+    include_dirs: [
+        "vendor/PAO/opencv_full/opencv/native/jni/include",
+    ],
+    
+    stl: "c++_shared",
+    rtti: true,
+    
+    cppflags: [
+        "-frtti",
+        "-fexceptions",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-DANDROID",
+        "-DWITH_ANDROID_CAMERA=1",  // Define camera support
+        "-DCONTRACT_CAMERA_API=1",   // Enable contract camera API
+        "-fPIC",
+        "-Wno-macro-redefined",
+        "-g",
+    ],
+    
+    ldflags: [
+        "-Wl,--no-undefined",
+        "-Wl,--exclude-libs=ALL",
+        "-Wl,--allow-shlib-undefined",
+        "-Wl,--warn-unresolved-symbols",
+    ],
+    
+    strip: {
+        keep_symbols: true,
+    },
+    
+    lto: {
+        never: true,
+    },
+    
+    apex_available: ["//apex_available:platform"],
+    min_sdk_version: "24",
+}

@@ -1,0 +1,4 @@
+/usr/bin/ninja \
+  -C \
+  /home/iti-es/AndroidStudioProjects/PersonClassifierApp/opencv/.cxx/Debug/543s4n3f/x86_64 \
+  opencv_jni_shared

@@ -1,0 +1,57 @@
+// FINAL CORRECTED Android.bp for PersonClassifierApp
+
+android_app {
+    name: "PersonClassifierApp",
+    
+    srcs: [
+        "src/**/*.kt",
+        "src/**/*.java",
+    ],
+    
+    resource_dirs: ["res"],
+    asset_dirs: ["assets"],
+    manifest: "AndroidManifest.xml",
+    platform_apis: true,
+    privileged: true,
+    installable: true,
+    
+    static_libs: [
+        "androidx.core_core-ktx",
+        "androidx.appcompat_appcompat", 
+        "com.google.android.material_material",
+        "androidx.activity_activity",
+        "androidx-constraintlayout_constraintlayout",
+        
+        // CORRECTED: Use the name of your "android_library" module for OpenCV.
+        // This provides the Java classes (BaseLoaderCallback, etc.) to the compiler.
+        "opencv-android-sdk",
+    ],
+    
+    // You only need to list YOUR native library here.
+    // The native OpenCV .so file will be included automatically because
+    // your libperson_classifier_native depends on it.
+    jni_libs: [
+        "libperson_classifier_native",
+    ],
+    
+    use_embedded_native_libs: true,
+    compile_multilib: "both",
+    
+    certificate: "platform",
+    
+    kotlincflags: ["-Xjvm-default=all"],
+    
+    package_name: "com.example.personclassifierapp",
+    
+    optimize: {
+        enabled: false,
+    },
+    
+    dxflags: ["--multi-dex"],
+   
+    
+    apex_available: [
+        "//apex_available:platform",
+    ],
+}
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Generic USB Video Class (UVC) cameras -->
+    <usb-device class="14" subclass="1" protocol="0" />
+    <usb-device class="14" subclass="2" protocol="0" />
+
+    <!-- Your specific camera (VID=328f, PID=0073) -->
+    <usb-device vendor-id="12943" product-id="115" />
+
+    <!-- Composite/Misc cameras like yours -->
+    <usb-device class="239" subclass="2" protocol="1" />
+    <usb-device class="239" />
+</resources>
+

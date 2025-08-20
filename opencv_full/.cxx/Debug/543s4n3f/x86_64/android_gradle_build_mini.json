@@ -1,0 +1,27 @@
+{
+  "buildFiles": [
+    "/home/iti-es/AndroidStudioProjects/PersonClassifierApp/opencv/libcxx_helper/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/usr/bin/ninja",
+      "-C",
+      "/home/iti-es/AndroidStudioProjects/PersonClassifierApp/opencv/.cxx/Debug/543s4n3f/x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/usr/bin/ninja",
+    "-C",
+    "/home/iti-es/AndroidStudioProjects/PersonClassifierApp/opencv/.cxx/Debug/543s4n3f/x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "opencv_jni_shared::@6890427a1f51a3e7e1df": {
+      "artifactName": "opencv_jni_shared",
+      "abi": "x86_64",
+      "output": "/home/iti-es/AndroidStudioProjects/PersonClassifierApp/opencv/.cxx/Debug/543s4n3f/x86_64/libopencv_jni_shared.a",
+      "runtimeFiles": []
+    }
+  }
+}

@@ -1,0 +1,1 @@
+/home/iti-es/AndroidStudioProjects/PersonClassifierApp/opencv/build/intermediates/cxx/Debug/543s4n3f/obj/x86

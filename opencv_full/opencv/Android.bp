@@ -1,0 +1,36 @@
+cc_prebuilt_library_shared {
+    name: "libopencv_java4",
+    target: {
+        android_arm64: { srcs: ["native/libs/arm64-v8a/libopencv_java4.so"] },
+        android_arm: { srcs: ["native/libs/armeabi-v7a/libopencv_java4.so"] },
+        android_x86: { srcs: ["native/libs/x86/libopencv_java4.so"] },
+        android_x86_64: { srcs: ["native/libs/x86_64/libopencv_java4.so"] },
+    },
+    export_include_dirs: ["native/jni/include"],
+    shared_libs: [
+        "ndk_libc++_shared", 
+        "libjnigraphics", 
+        "liblog", 
+        "libmediandk", 
+        "libz"
+    ],
+    strip: {
+        none: true,
+    },
+    check_elf_files: false,
+}
+
+// Add Android library module for OpenCV
+android_library {
+    name: "opencv-android-sdk",
+    
+    srcs: ["java/src/**/*.java"],
+    resource_dirs: ["java/res"],
+    
+    min_sdk_version: "24",
+    target_sdk_version: "36",
+    
+    apex_available: [
+        "//apex_available:platform",
+    ],
+}
