@@ -1,0 +1,94 @@
+<resources>
+    <string name="app_name">testUI</string>
+    <!-- Zone Names -->
+    <string name="zone_front_left">Driver</string>
+    <string name="zone_front_right">Passenger</string>
+    <string name="zone_rear_left">Rear Left</string>
+    <string name="zone_rear_right">Rear Right</string>
+
+    <!-- Speed Labels -->
+    <string name="speed_off">Off</string>
+    <string name="speed_low">Low</string>
+    <string name="speed_medium">Medium</string>
+    <string name="speed_high">High</string>
+    <string name="speed_max">Max</string>
+
+    <!-- Controls -->
+    <string name="master_controls">Master Controls</string>
+    <string name="all_max">All Max</string>
+    <string name="all_off">All Off</string>
+    <string name="front_row">Front Row</string>
+    <string name="rear_row">Rear Row</string>
+
+    <!-- Status Messages -->
+    <string name="fan_speed_set">Fan speed set to %1$d%%</string>
+    <string name="connection_failed">Failed to connect to vehicle system</string>
+    <string name="property_error">Failed to set fan speed: %1$s</string>
+    <string name="car_api_connecting">Connecting to vehicle…</string>
+    <string name="car_api_connected">Connected to vehicle system</string>
+
+    <!-- Error Messages -->
+    <string name="error_car_connection">Unable to connect to vehicle. Please ensure the app has proper permissions.</string>
+    <string name="error_property_not_supported">Fan control property not supported by this vehicle.</string>
+    <string name="error_permission_denied">Permission denied. Please grant car access permissions.</string>
+
+    <!-- Descriptions for accessibility -->
+    <string name="fan_speed_slider_description">Fan speed control slider</string>
+    <string name="fan_speed_button_description">Set fan speed to %1$d percent</string>
+    <string name="zone_card_description">Fan control for %1$s zone</string>
+
+    <string name="pao_voice_title">PAO Voice Assistant</string>
+    <string name="voice_subtitle">Your intelligent vehicle companion</string>
+
+    <!-- Voice States -->
+    <string name="ready_to_listen">Ready to listen</string>
+    <string name="listening_status">Listening...</string>
+    <string name="processing_command">Processing command</string>
+    <string name="command_executing">Executing command</string>
+    <string name="command_completed">Command completed</string>
+    <string name="activate_voice">Activate Voice Assistant</string>
+    <string name="listening_widget">Voice Listening Active</string>
+
+    <!-- Instructions -->
+    <string name="tap_to_start">Tap the microphone to start</string>
+    <string name="voice_instructions">Say commands like:\n"Light on", "AC off", "Set temp to 25"</string>
+    <string name="speak_now">Speak now</string>
+
+    <!-- Content Descriptions -->
+    <string name="pao_voice_logo">PAO Voice Logo</string>
+    <string name="microphone_icon">Microphone</string>
+    <string name="command_recognized">Command Recognized</string>
+    <string name="toggle_voice">Toggle Voice Recognition</string>
+    <string name="voice_settings">Voice Settings</string>
+
+    <!-- Commands -->
+    <string name="light_commands">Light Commands</string>
+    <string name="climate_commands">Climate Commands</string>
+    <string name="system_commands">System Commands</string>
+
+    <!-- Quick Commands -->
+    <string name="quick_light_on">Light On</string>
+    <string name="quick_light_off">Light Off</string>
+    <string name="quick_ac_on">AC On</string>
+    <string name="quick_ac_off">AC Off</string>
+    <string name="quick_temp_up">Temp Up</string>
+    <string name="quick_temp_down">Temp Down</string>
+
+    <!-- Error Messages -->
+    <string name="error_no_permission">Microphone permission required</string>
+    <string name="error_model_loading">Failed to load voice model</string>
+    <string name="error_recognition">Voice recognition error</string>
+    <string name="error_command_failed">Command execution failed</string>
+
+    <!-- Success Messages -->
+    <string name="success_command_executed">Command executed successfully</string>
+    <string name="success_listening_started">Voice recognition started</string>
+    <string name="success_listening_stopped">Voice recognition stopped</string>
+
+    <!-- Settings -->
+    <string name="settings_voice_sensitivity">Voice Sensitivity</string>
+    <string name="settings_auto_listen">Auto Listen Mode</string>
+    <string name="settings_feedback_sounds">Feedback Sounds</string>
+    <string name="settings_wake_word">Wake Word Detection</string>
+    <string name="command_icon" > Command Icon</string>
+</resources>

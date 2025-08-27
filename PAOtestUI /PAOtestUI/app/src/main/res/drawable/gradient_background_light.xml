@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base diagonal linear gradient -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="315"
+                android:startColor="#A8B7BA"
+            android:endColor="#D7E0E2"
+            />
+        </shape>
+    </item>
+
+    <!-- Radial highlight glow -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="radial"
+                android:centerX="55%"
+            android:centerY="45%"
+            android:gradientRadius="90%p"
+            android:startColor="#F0F4F6"
+            android:endColor="#00F0F4F6"
+            />
+        </shape>
+    </item>
+
+</layer-list>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Outer soft glow -->
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:startColor="#20ffffff"
+                android:centerColor="#10ffffff"
+                android:endColor="#00ffffff"
+                android:type="radial"
+                android:gradientRadius="250dp" />
+        </shape>
+    </item>
+
+    <!-- Middle glow -->
+    <item android:top="50dp" android:bottom="50dp" android:left="25dp" android:right="25dp">
+        <shape android:shape="oval">
+            <gradient
+                android:startColor="#40ffffff"
+                android:centerColor="#20ffffff"
+                android:endColor="#00ffffff"
+                android:type="radial"
+                android:gradientRadius="150dp" />
+        </shape>
+    </item>
+
+    <!-- Inner bright core -->
+    <item android:top="150dp" android:bottom="150dp" android:left="75dp" android:right="75dp">
+        <shape android:shape="oval">
+            <gradient
+                android:startColor="#80ffffff"
+                android:centerColor="#40ffffff"
+                android:endColor="#00ffffff"
+                android:type="radial"
+                android:gradientRadius="75dp" />
+        </shape>
+    </item>
+
+    <!-- Light streak horizontal -->
+    <item android:top="300dp" android:bottom="300dp" android:left="100dp" android:right="0dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#60ffffff"
+                android:centerColor="#20ffffff"
+                android:endColor="#00ffffff"
+                android:angle="180" />
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+
+    <!-- Light streak vertical -->
+    <item android:top="100dp" android:bottom="500dp" android:left="125dp" android:right="125dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#40ffffff"
+                android:centerColor="#15ffffff"
+                android:endColor="#00ffffff"
+                android:angle="90" />
+            <corners android:radius="25dp" />
+        </shape>
+    </item>
+</layer-list>

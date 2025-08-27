@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background_light"
+    android:padding="24dp">
+
+    <!-- Home Button -->
+    <ImageButton
+        android:id="@+id/home_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Home"
+        android:src="@drawable/home"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Car Cabin Visualization -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/car_visualization_card"
+        android:layout_width="1200dp"
+        android:layout_height="473dp"
+        android:layout_marginTop="80dp"
+        app:cardBackgroundColor="@color/nice_color"
+        app:cardCornerRadius="80dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Car Outline Image -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/gif_imageview_Rare_left"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginHorizontal="355dp"
+            android:layout_marginVertical="30dp"
+            android:alpha="0"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/RoundedCorners" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/gif_imageview_driver"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginHorizontal="650dp"
+            android:layout_marginVertical="30dp"
+            android:alpha="0"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/RoundedCorners" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/gif_imageview_Rare_right"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginHorizontal="355dp"
+            android:layout_marginVertical="285dp"
+            android:alpha="0"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/RoundedCorners" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/gif_imageview_passenger"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginHorizontal="650dp"
+            android:layout_marginVertical="285dp"
+            android:alpha="0"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/RoundedCorners" />
+
+        <ImageView
+            android:id="@+id/car_outline"
+            android:layout_width="1115dp"
+            android:layout_height="457dp"
+            android:layout_marginHorizontal="45dp"
+            android:alpha="0.8"
+            android:scaleType="fitCenter"
+            android:src="@drawable/carbg"
+            app:layout_constraintHeight_percent="0.8"
+            app:layout_constraintWidth_percent="0.7"
+            tools:layout_editor_absoluteX="200dp"
+            tools:layout_editor_absoluteY="-41dp" />
+
+        <me.tankery.lib.circularseekbar.CircularSeekBar
+            android:id="@+id/circularSeekBarRearLeft"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginVertical="20dp"
+            app:cs_circle_color="@color/card_background"
+            app:cs_circle_progress_color="#ACADAE"
+            app:cs_circle_stroke_width="30dp"
+            app:cs_max="5"
+            app:cs_pointer_color="#333637"
+            app:cs_pointer_halo_color="#333637"
+            app:cs_pointer_stroke_width="8dp"
+            app:cs_progress="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/progress_value_rear_left"
+            android:layout_width="51dp"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="65dp"
+            android:layout_marginVertical="70dp"
+            android:fontFamily="@font/poppinslight"
+            android:gravity="center"
+            android:textColor="#333637"
+            android:textSize="42sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/circularSeekBarRearLeft"
+            app:layout_constraintEnd_toEndOf="@id/circularSeekBarRearLeft"
+            app:layout_constraintStart_toStartOf="@id/circularSeekBarRearLeft"
+            app:layout_constraintTop_toTopOf="@id/circularSeekBarRearLeft"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <me.tankery.lib.circularseekbar.CircularSeekBar
+            android:id="@+id/circularSeekBarDriver"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_marginHorizontal="1030dp"
+            android:layout_marginVertical="20dp"
+            app:cs_circle_color="@color/card_background"
+            app:cs_circle_progress_color="#ACADAE"
+            app:cs_circle_stroke_width="30dp"
+            app:cs_max="5"
+            app:cs_pointer_color="#333637"
+            app:cs_pointer_halo_color="#333637"
+            app:cs_pointer_stroke_width="8dp"
+            app:cs_progress="1" />
+
+        <TextView
+            android:id="@+id/progress_value_driver"
+            android:layout_width="51dp"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="1088dp"
+            android:layout_marginVertical="70dp"
+            android:fontFamily="@font/poppinslight"
+            android:gravity="center"
+            android:textColor="#333637"
+            android:textSize="42sp"
+            android:textStyle="bold" />
+
+        <me.tankery.lib.circularseekbar.CircularSeekBar
+            android:id="@+id/circularSeekBarPassenger"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_marginHorizontal="1030dp"
+            android:layout_marginVertical="270dp"
+            app:cs_circle_color="@color/card_background"
+            app:cs_circle_progress_color="#ACADAE"
+            app:cs_circle_stroke_width="30dp"
+            app:cs_max="5"
+            app:cs_pointer_color="#333637"
+            app:cs_pointer_halo_color="#333637"
+            app:cs_pointer_stroke_width="8dp"
+            app:cs_progress="1" />
+
+        <TextView
+            android:id="@+id/progress_value_passenger"
+            android:layout_width="51dp"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="1088dp"
+            android:layout_marginVertical="320dp"
+            android:fontFamily="@font/poppinslight"
+            android:gravity="center"
+            android:textColor="#333637"
+            android:textSize="42sp"
+            android:textStyle="bold" />
+
+        <me.tankery.lib.circularseekbar.CircularSeekBar
+            android:id="@+id/circularSeekBarRearRight"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginVertical="270dp"
+            app:cs_circle_color="@color/card_background"
+            app:cs_circle_progress_color="#ACADAE"
+            app:cs_circle_stroke_width="30dp"
+            app:cs_max="5"
+            app:cs_pointer_color="#333637"
+            app:cs_pointer_halo_color="#333637"
+            app:cs_pointer_stroke_width="8dp"
+            app:cs_progress="1" />
+
+        <TextView
+            android:id="@+id/progress_value_rear_right"
+            android:layout_width="51dp"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="65dp"
+            android:layout_marginVertical="320dp"
+            android:fontFamily="@font/poppinslight"
+            android:gravity="center"
+            android:textColor="#333637"
+            android:textSize="42sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- Quick Actions -->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="1012dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/car_visualization_card">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_all_max"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="#ACADAE"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            android:text="MAX\nCOOL"
+            android:textColor="#333637"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:cornerRadius="60dp"
+            app:icon="@drawable/ic_snowflake"
+            app:iconGravity="textTop"
+            app:iconPadding="4dp"
+            app:iconSize="25dp"
+            app:iconTint="#333637" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_all_off"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="16dp"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            android:text="ALL\nOFF"
+            android:textColor="#333637"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:cornerRadius="60dp"
+            app:icon="@drawable/ic_power_off"
+            app:iconGravity="textTop"
+            app:iconPadding="4dp"
+            app:iconSize="25dp"
+            app:iconTint="#333637"
+            app:strokeColor="#333637"
+            app:strokeWidth="2dp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

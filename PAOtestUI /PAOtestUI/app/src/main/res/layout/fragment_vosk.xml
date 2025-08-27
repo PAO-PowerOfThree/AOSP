@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/voice_background"
+    tools:context=".VoskDialogFragment">
+
+    <!-- Status Bar -->
+    <View
+        android:id="@+id/status_bar_spacer"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:id="@+id/header_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingTop="32dp"
+        android:paddingBottom="24dp"
+        app:layout_constraintTop_toBottomOf="@id/status_bar_spacer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- PAO Logo/Icon -->
+        <ImageView
+            android:id="@+id/pao_logo"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_pao_voice"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/pao_voice_logo"
+            app:tint="@color/primary_color" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pao_voice_title"
+            android:textSize="28sp"
+            android:textColor="@color/primary_text"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Subtitle -->
+        <TextView
+            android:id="@+id/subtitle_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/voice_subtitle"
+            android:textSize="16sp"
+            android:textColor="@color/secondary_text"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:alpha="0.8" />
+
+    </LinearLayout>
+
+    <!-- Main Voice Interaction Area -->
+    <FrameLayout
+        android:id="@+id/voice_interaction_area"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintTop_toBottomOf="@id/header_section"
+        app:layout_constraintBottom_toTopOf="@id/control_section"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Waveform Animation Container -->
+        <LinearLayout
+            android:id="@+id/waveform_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <!-- Listening Status -->
+            <TextView
+                android:id="@+id/listening_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/listening_status"
+                android:textSize="18sp"
+                android:textColor="@color/accent_color"
+                android:fontFamily="@font/roboto_medium"
+                android:layout_marginBottom="32dp"
+                android:alpha="0.9" />
+
+            <!-- Waveform View -->
+            <com.example.pao_voice.WaveformView
+                android:id="@+id/waveform_view"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Live Transcript Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/surface_lighter">
+
+                <TextView
+                    android:id="@+id/transcript_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Listening..."
+                    android:textSize="14sp"
+                    android:textColor="@color/primary_text"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:minHeight="48dp"
+                    android:visibility="gone" />
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Voice Instructions -->
+            <TextView
+                android:id="@+id/voice_instructions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/voice_instructions"
+                android:textSize="14sp"
+                android:textColor="@color/secondary_text"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:alpha="0.7"
+                android:lineSpacingMultiplier="1.2" />
+
+        </LinearLayout>
+
+        <!-- Recognized Text Display -->
+        <LinearLayout
+            android:id="@+id/text_display_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <!-- Command Icon -->
+            <ImageView
+                android:id="@+id/command_icon"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/ic_voice_command"
+                android:layout_marginBottom="24dp"
+                android:contentDescription="@string/command_recognized"
+                app:tint="@color/success_color" />
+
+            <!-- Recognized Text -->
+            <TextView
+                android:id="@+id/recognized_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="22sp"
+                android:textColor="@color/primary_text"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:padding="24dp"
+                android:background="@drawable/text_background"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:minHeight="80dp"
+                android:visibility="gone" />
+
+            <!-- Command Feedback -->
+            <TextView
+                android:id="@+id/command_feedback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/command_executing"
+                android:textSize="16sp"
+                android:textColor="@color/success_color"
+                android:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="16dp"
+                android:alpha="0.8" />
+
+        </LinearLayout>
+
+        <!-- Idle State -->
+        <LinearLayout
+            android:id="@+id/idle_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!-- Large Microphone Icon with Pulse Animation -->
+            <FrameLayout
+                android:id="@+id/microphone_frame"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginBottom="32dp">
+
+                <!-- Microphone Icon -->
+                <ImageView
+                    android:id="@+id/microphone_icon"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_microphone"
+                    android:contentDescription="@string/microphone_icon"
+                    android:alpha="0.6"
+                    app:tint="@color/primary_color" />
+            </FrameLayout>
+
+            <!-- Ready Status -->
+            <TextView
+                android:id="@+id/ready_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ready_to_listen"
+                android:textSize="20sp"
+                android:textColor="@color/primary_text"
+                android:fontFamily="@font/roboto_medium"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Tap to Start Hint -->
+            <TextView
+                android:id="@+id/tap_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tap_to_start"
+                android:textSize="14sp"
+                android:textColor="@color/secondary_text"
+                android:fontFamily="@font/roboto_medium"
+                android:alpha="0.7" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <!-- Control Section -->
+    <LinearLayout
+        android:id="@+id/control_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Voice Toggle Button -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/voice_toggle_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:contentDescription="@string/toggle_voice"
+            android:src="@drawable/ic_mic_on"
+            app:backgroundTint="@color/primary_dark"
+            app:elevation="8dp"
+            app:hoveredFocusedTranslationZ="12dp"
+            app:pressedTranslationZ="16dp"
+            app:tint="@android:color/white" />
+
+        <!-- Settings Button -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/settings_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_settings"
+            android:contentDescription="@string/voice_settings"
+            app:tint="@color/secondary_text"
+            app:backgroundTint="@color/surface_color"
+            app:elevation="4dp"
+            app:fabSize="mini" />
+
+    </LinearLayout>
+
+    <!-- Quick Commands Overlay (Optional) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/quick_commands_list"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/control_section"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:itemCount="3"
+        tools:listitem="@layout/item_quick_command" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

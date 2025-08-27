@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/voice_background"
+    tools:context=".VoskDialogFragment">
+
+    <!-- Left Panel: Logo and Controls -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/left_card"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@color/surface_color"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/right_card"
+        app:layout_constraintWidth_percent="0.35">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="24dp">
+
+            <!-- PAO Logo with Circular Background -->
+            <FrameLayout
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_marginBottom="24dp">
+
+                <!-- Circular Background -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/circle_primary_background" />
+
+                <!-- PAO Icon -->
+                <ImageView
+                    android:id="@+id/pao_logo"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_pao_voice"
+                    android:contentDescription="@string/pao_voice_logo"
+                    app:tint="@color/white" />
+            </FrameLayout>
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PAO Voice Assistant"
+                android:textSize="20sp"
+                android:textColor="@color/primary_text"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Subtitle -->
+            <TextView
+                android:id="@+id/subtitle_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your intelligent voice companion"
+                android:textSize="12sp"
+                android:textColor="@color/secondary_text"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:layout_marginBottom="32dp" />
+
+            <!-- Voice Toggle Button -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/voice_toggle_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="@string/toggle_voice"
+                android:src="@drawable/ic_mic_on"
+                app:backgroundTint="@color/primary_color"
+                app:elevation="8dp"
+                app:hoveredFocusedTranslationZ="12dp"
+                app:pressedTranslationZ="16dp"
+                app:tint="@color/white"
+                app:fabSize="normal" />
+
+            <!-- Settings Button -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/home_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/home"
+                android:contentDescription="@string/voice_settings"
+                app:tint="@color/secondary_text"
+                app:backgroundTint="@color/surface_lighter"
+                app:elevation="4dp"
+                app:fabSize="mini" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Right Panel: Voice Interaction Area -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/right_card"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:layout_marginStart="8dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@color/surface_color"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/left_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.65">
+
+        <FrameLayout
+            android:id="@+id/voice_interaction_area"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="32dp">
+
+            <!-- Idle State -->
+            <LinearLayout
+                android:id="@+id/idle_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <!-- Large Microphone Icon with Pulse Animation -->
+                <FrameLayout
+                    android:id="@+id/microphone_frame"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginBottom="24dp">
+
+                    <!-- Pulse Ring 1 -->
+                    <View
+                        android:id="@+id/pulse_ring_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/circle_primary_background"
+                        android:alpha="0.0" />
+
+                    <!-- Pulse Ring 2 -->
+                    <View
+                        android:id="@+id/pulse_ring_2"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/circle_primary_background"
+                        android:alpha="0.0" />
+
+                    <!-- Main Microphone Background -->
+                    <View
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/circle_primary_background" />
+
+                    <!-- Microphone Icon -->
+                    <ImageView
+                        android:id="@+id/microphone_icon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_microphone"
+                        android:contentDescription="@string/microphone_icon"
+                        app:tint="@color/white" />
+                </FrameLayout>
+
+                <!-- Status Text -->
+                <TextView
+                    android:id="@+id/ready_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ready to listen"
+                    android:textSize="18sp"
+                    android:textColor="@color/primary_text"
+                    android:fontFamily="@font/roboto_medium"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Tap Hint -->
+                <TextView
+                    android:id="@+id/tap_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tap the microphone to start"
+                    android:textSize="13sp"
+                    android:textColor="@color/secondary_text"
+                    android:fontFamily="@font/roboto_medium"
+                    android:alpha="0.7" />
+
+            </LinearLayout>
+
+            <!-- Listening State -->
+            <LinearLayout
+                android:id="@+id/waveform_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:visibility="gone">
+
+                <!-- Listening Status -->
+                <TextView
+                    android:id="@+id/listening_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Listening..."
+                    android:textSize="20sp"
+                    android:textColor="@color/listening_color"
+                    android:fontFamily="@font/roboto_medium"
+                    android:layout_marginBottom="24dp" />
+
+                <!-- Audio Waveform -->
+                <com.example.testui.WaveformView
+                    android:id="@+id/waveform_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="20dp" />
+
+                <!-- Instructions -->
+                <TextView
+                    android:id="@+id/voice_instructions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Speak now..."
+                    android:textSize="14sp"
+                    android:textColor="@color/secondary_text"
+                    android:fontFamily="@font/roboto_medium"
+                    android:alpha="0.7" />
+
+            </LinearLayout>
+
+            <!-- Text Recognition Display -->
+            <LinearLayout
+                android:id="@+id/text_display_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:visibility="gone">
+
+                <!-- Success Icon -->
+                <ImageView
+                    android:id="@+id/command_icon"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:src="@drawable/ic_voice_command"
+                    android:layout_marginBottom="20dp"
+                    android:contentDescription="@string/command_recognized"
+                    app:tint="@color/success_color" />
+
+                <!-- Recognized Text Card -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="@color/surface_lighter">
+
+                    <TextView
+                        android:id="@+id/recognized_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="16sp"
+                        android:textColor="@color/primary_text"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="center"
+                        android:padding="20dp"
+                        android:minHeight="60dp"
+                        android:visibility="gone" />
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Command Feedback -->
+                <TextView
+                    android:id="@+id/command_feedback"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Processing command..."
+                    android:textSize="14sp"
+                    android:textColor="@color/processing_color"
+                    android:fontFamily="@font/roboto_medium"
+                    android:alpha="0.8" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

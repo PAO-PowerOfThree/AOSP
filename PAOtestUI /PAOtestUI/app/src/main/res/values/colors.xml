@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="my_light_primary">#2B2B3D</color>
+        <!-- Material Design 3 dynamic colors (approximated) -->
+        <color name="material_dynamic_primary90">#B3E5FC</color>
+        <color name="material_dynamic_neutral95">#F5F5F5</color>
+        <color name="material_dynamic_primary50">#0288D1</color>
+        <color name="material_dynamic_neutral70">#B0BEC5</color>
+        <color name="material_dynamic_primary60">#0277BD</color>
+
+        <color name="dark_background">#121212</color>
+        <color name="card_background">#1E1E1E</color>
+        <color name="vent_background">#2C2C2C</color>
+        <color name="text_primary">#FFFFFF</color>
+        <color name="text_secondary">#B3FFFFFF</color>
+        <color name="text_on_accent">#FFFFFF</color>
+        <color name="accent_blue">#2196F3</color>
+        <color name="accent_green">#4CAF50</color>
+        <color name="accent_red">#ff0000</color>
+        <color name="track_color">#333333</color>
+        <color name="nice_color">#A8B7BA</color>
+
+    <!-- Primary Colors -->
+    <color name="primary_color">#2196F3</color>
+    <color name="primary_dark">#1976D2</color>
+    <color name="accent_color">#FF4081</color>
+
+    <!-- Background Colors -->
+    <color name="voice_background">#121212</color>
+    <color name="surface_color">#1E1E1E</color>
+    <color name="surface_lighter">#2A2A2A</color>
+    <color name="divider_color">#1EFFFFFF</color>
+
+    <!-- Text Colors -->
+    <color name="primary_text">#FFFFFF</color>
+    <color name="secondary_text">#B3FFFFFF</color>
+    <color name="hint_text">#80FFFFFF</color>
+
+    <!-- Status Colors -->
+    <color name="success_color">#4CAF50</color>
+    <color name="warning_color">#FF9800</color>
+    <color name="error_color">#F44336</color>
+
+
+    <!-- Voice States -->
+    <color name="listening_color">#00E676</color>
+    <color name="processing_color">#FFC107</color>
+    <color name="idle_color">#757575</color>
+
+    <!-- Waveform Colors -->
+    <color name="waveform_start">#2196F3</color>
+    <color name="waveform_end">#FFFFFF</color>
+
+    <!-- Common Colors -->
+    <color name="transparent">#00000000</color>
+</resources>
