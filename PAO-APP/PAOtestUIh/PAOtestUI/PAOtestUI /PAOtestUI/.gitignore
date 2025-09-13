@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+/PAO-APP/app/src/main/res/
+/PAO-APP/app/src/main/assets/

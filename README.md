@@ -8,32 +8,36 @@ AOSP platform customization including framework modifications, system service ex
 
 Below are screenshots from ***trout*** of each activity/fragment.
 
-### MainActivity
-![MainActivity Screenshot](photos/main1.png)
-![MainActivity Screenshot](photos/main2.png)
+## 📸 Passenger Display Screenshots
+
+## 📸 Passenger Display Screenshots
+
+### Fingerprint
+<img src="photos/fingerprint.png" width="100%">
+
+### Main Dashboard
+<img src="photos/main1.png" width="100%">
+<img src="photos/main2.png" width="100%">
+
+### Ambient Lighting
+<img src="photos/light1.png" width="100%">
+<img src="photos/light2.png" width="100%">
+<img src="photos/light3.png" width="100%">
+
+### HVAC Control
+<img src="photos/hvac1.png" width="100%">
+<img src="photos/hvac2.png" width="100%">
+<img src="photos/hvac3.png" width="100%">
+
+### Navigation
+<img src="photos/map1.png" width="100%">
+<img src="photos/map2.png" width="100%">
+<img src="photos/map3.png" width="100%">
+
+### Voice Recognition
+<img src="photos/voice.png" width="100%">
 
 
-### AmbientLightActivity
-![AmbientLightActivity Screenshot](photos/light1.png)
-![AmbientLightActivity Screenshot](photos/light2.png)
-![AmbientLightActivity Screenshot](photos/light3.png)
-![AmbientLightActivity Screenshot](photos/light4.png)
-
-
-### HvacActivity
-![HvacActivity Screenshot](photos/hvac1.png)
-![HvacActivity Screenshot](photos/hvac2.png)
-![HvacActivity Screenshot](photos/hvac3.png)
-
-
-### NavigationActivity
-![NavigationActivity Screenshot](photos/map1.png)
-![NavigationActivity Screenshot](photos/map2.png)
-![NavigationActivity Screenshot](photos/map3.png)
-
-
-### VoskDialogFragment (Voice Recognition)
-![FingerprintActivity Screenshot](photos/voice.png)
 
 
 This project is an Android Open Source Project (AOSP) based application designed for automotive environments, specifically targeting Android Automotive OS (AAOS). It provides a comprehensive test UI for various vehicle-related features, including ambient lighting control, fingerprint authentication, HVAC (Heating, Ventilation, and Air Conditioning) management, music playback, navigation with GPS integration, over-the-air (OTA) updates, and voice recognition using the Vosk speech-to-text engine. The app leverages Android's Car API and Vehicle HAL (VHAL) to interact with vehicle hardware properties.
