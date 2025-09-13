@@ -10,8 +10,6 @@ Below are screenshots from ***trout*** of each activity/fragment.
 
 ## 📸 Passenger Display Screenshots
 
-## 📸 Passenger Display Screenshots
-
 ### Fingerprint
 <img src="photos/fingerprint.png" width="100%">
 
