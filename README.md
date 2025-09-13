@@ -2,7 +2,7 @@
 AOSP platform customization including framework modifications, system service extensions, and HAL integrations.
 
 
-# AOSP Automotive Test UI Application
+# AOSP Automotive PAO Application
 
 ## PAO - Passenger Display
 
@@ -38,7 +38,7 @@ Below are screenshots from ***trout*** of each activity/fragment.
 
 
 
-This project is an Android Open Source Project (AOSP) based application designed for automotive environments, specifically targeting Android Automotive OS (AAOS). It provides a comprehensive test UI for various vehicle-related features, including ambient lighting control, fingerprint authentication, HVAC (Heating, Ventilation, and Air Conditioning) management, music playback, navigation with GPS integration, over-the-air (OTA) updates, and voice recognition using the Vosk speech-to-text engine. The app leverages Android's Car API and Vehicle HAL (VHAL) to interact with vehicle hardware properties.
+This project is an Android Open Source Project (AOSP) based application designed for automotive environments, specifically targeting Android Automotive OS (AAOS). It provides a comprehensive pao-ui for various vehicle-related features, including ambient lighting control, fingerprint authentication, HVAC (Heating, Ventilation, and Air Conditioning) management, music playback, navigation with GPS integration, over-the-air (OTA) updates, and voice recognition using the Vosk speech-to-text engine. The app leverages Android's Car API and Vehicle HAL (VHAL) to interact with vehicle hardware properties.
 
 The application is built in Kotlin and demonstrates integration with automotive-specific APIs, such as `CarPropertyManager` for reading/writing vehicle properties (e.g., fan speed, LED strips, GPS location). It includes immersive UI elements, dark/light mode support, animations, and voice-activated controls for a seamless in-car experience.
 
